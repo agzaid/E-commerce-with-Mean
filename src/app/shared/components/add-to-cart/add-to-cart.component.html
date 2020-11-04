@@ -1,0 +1,8 @@
+<div class="quant" *ngIf="quantity >= 1">
+    <button class="btn btn-primary" (click)="increase()">+</button>
+    <input [(ngModel)]="quantity" disabled type="text" class="text-center">
+    <button class="btn btn-primary" (click)="decrease()">-</button>
+</div>
+<div>
+    <button class="btn btn-primary form-control" *ngIf="quantity < 1" (click)="increase()">Add to cart</button>
+</div>

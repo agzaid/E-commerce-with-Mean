@@ -1,0 +1,9 @@
+.quant{
+    display: inline-flex;
+    width: 50px;
+    padding: 2px;
+}
+
+.quant input{
+    width: 100vw;
+}

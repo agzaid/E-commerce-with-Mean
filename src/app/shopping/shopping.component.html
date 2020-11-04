@@ -1,0 +1,32 @@
+<section class="cart">
+    <div class="container">
+        <div class="row row-eq-height product-cart" *ngFor="let product of products">
+            <div class="col-md-2">
+                <div class="imag text-center">
+                    <img [src]="product.product.imgUrl">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h4>{{product.product.name}}</h4>
+                <!-- <a href="#" class="add"><i class="fas fa-cart-plus"></i></a> -->
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                </p>
+                <div class="quant text-center">
+                    <button class="btn btn-primary">+</button>
+                    <input [(ngModel)]="product.quantity" disabled ype="text" name="" class="text-center">
+                    <button class="btn btn-primary">-</button>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="price">
+                    <h3>{{product.product.price}}<small> LE</small></h3>
+                </div>
+            </div>
+            <div class="col-md-2 text-center icons">
+                <button class="btn btn-danger" (click)="delete(product)"><i class="far fa-trash-alt"></i></button>
+                <button class="btn btn-primary" (click)="preview(product)"><i class="fas fa-eye"></i></button>
+            </div>
+        </div>
+    </div>
+</section>

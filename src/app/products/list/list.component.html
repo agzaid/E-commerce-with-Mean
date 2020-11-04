@@ -1,0 +1,46 @@
+<div class="row" *ngIf="!isLoading">
+  <div class="col-md-4" *ngFor="let product of products |filter: 'name':productsService.searchKey">
+    <div class="product-item">
+      <div class="imag">
+        <img [src]="product.imgUrl">
+      </div>
+      <div class="product-desc">
+        <li type="button" data-toggle="modal" target="_blank"
+        data-target="#myModal" (click)="modal(product)">{{product.name}}</li>
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+          
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header" >
+              <button type="button" style="margin-right: 50%;color: rgb(255, 0, 0);" class="close btn btn-danger" data-dismiss="modal"> &times; </button>
+                <h4 class="modal-title">{{modalProduct.name}}</h4>
+              </div>
+              <div class="modal-body">
+                <img [src]="modalProduct.imgUrl">
+                <p>{{modalProduct.price}}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <!-- End Of Modal content -->
+
+        <li>{{product.price}}</li>
+        <li class="add"><i class="fas fa-cart-plus"></i></li>
+        <div class="addToCart">
+          <app-add-to-cart [product]="product"></app-add-to-cart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="isLoading">
+  <h1>Product is loading...</h1>
+</div>
+<div class="row" *ngIf="isError">
+  <h1>There's an Error...</h1>
+</div>

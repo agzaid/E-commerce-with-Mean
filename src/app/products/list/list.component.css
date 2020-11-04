@@ -1,0 +1,26 @@
+.product-item{
+    width: 100%;
+    list-style: none;
+    box-shadow: 1px 2px 4px 4px rgb(118, 155, 177);
+    border-radius: 20px;
+}
+.addToCart{
+    padding: 2px;
+    width: auto;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+ [target=_blank]{
+     font-size: 1em;
+    color: skyblue;
+}
+
+[target=_blank]:hover{
+    text-decoration: underline skyblue;
+}
+
