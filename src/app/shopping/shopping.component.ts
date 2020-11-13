@@ -1,6 +1,5 @@
 import { ProductsService } from './../products/products.service';
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../shared';
 
 @Component({
   selector: 'app-shopping',
@@ -23,7 +22,7 @@ export class ShoppingComponent implements OnInit {
     // this.products.splice(index,1);
     this.productsService.removeFromCart(product);
   }
-  preview() {
+  preview(product) {
 
   }
 }
